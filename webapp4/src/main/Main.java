@@ -1,6 +1,8 @@
 package main;
 
 import webapp.model.Resume;
+import webapp.model.Section;
+import webapp.model.TextSection;
 
 /**
  * User: gkislin
@@ -13,7 +15,7 @@ public class Main {
      * @param args args[0]: name
      */
     public static void main(String[] args) {
-        Resume r = new Resume("Ivan Ivanov");
+        Resume r = new Resume("Ivan Ivanov", "address 1");
         Resume r2 = new Resume();
 /*
         r.setFullName("Ivan Ivanov");
@@ -22,5 +24,15 @@ public class Main {
         System.out.println(r2.getClass());
         System.out.println(Resume.class);
         System.out.println(Resume.class==r.getClass());
+
+        Section c = new Section("Qualifications");
+        if (c instanceof TextSection) { // not object oriented
+            //usually used in exceptions
+            //better be avoided
+            ((TextSection) c).getContent();
+        }
+
+        //widegets oif are reloadable they could be
+
     }
 }
