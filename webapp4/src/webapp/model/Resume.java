@@ -1,9 +1,11 @@
 package webapp.model;
 
+import java.io.Serializable;
 import java.util.Collection;
 
-public class Resume {
+public class Resume  implements  Serializable { // }, Comparable {
 
+    String uuid;
     String fullName;
     String location;
     String homePage;
@@ -16,6 +18,10 @@ public class Resume {
     public Resume(String fullName, String location) {
         this.fullName = fullName;
         this.location = location;
+    }
+
+    public static Resume create(String fullName, String location) {
+        return new Resume(fullName,location);
     }
 
     public String getFullName() {
@@ -42,4 +48,15 @@ public class Resume {
         return  contacts;
     }
 
+    @Override
+    public String toString() {
+        return "Resume{" +
+                "uuid='" + uuid + '\'' +
+                ", fullName='" + fullName + '\'' +
+                ", location='" + location + '\'' +
+                ", homePage='" + homePage + '\'' +
+                ", sections=" + sections +
+                ", contacts=" + contacts +
+                '}';
+    }
 }
