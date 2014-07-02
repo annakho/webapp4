@@ -20,6 +20,14 @@ public class Resume  implements  Serializable { // }, Comparable {
         this.location = location;
     }
 
+    public String getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
+
     public static Resume create(String fullName, String location) {
         return new Resume(fullName,location);
     }

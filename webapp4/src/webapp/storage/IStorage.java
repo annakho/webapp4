@@ -1,4 +1,4 @@
-package storage;
+package webapp.storage;
 
 import webapp.model.Resume;
 
@@ -11,7 +11,7 @@ public interface IStorage {
 
     void create(Resume r);
     void update(Resume r);
-    void read(String uuid);
+    Resume read(String uuid);
     void delete(String uuid);
 
     Collection<Resume> getAll();
